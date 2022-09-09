@@ -24,5 +24,4 @@ class ColorConstant {
   static Color negativeColor = HexColor('#cbced8'); // 置灰色
   static Color positiveColor = HexColor('#6AAAF5'); // 激活色
   static Color warningColor = HexColor('#db6372'); // 警告色
-  // 通用色
 }

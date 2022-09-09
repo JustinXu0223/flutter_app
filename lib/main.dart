@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // constants
 import 'package:flutter_app/constants/color.dart';
+// pages
+import 'package:flutter_app/pages/demo/dashLine/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -107,6 +109,20 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DashLinePage(),
+                  ),
+                );
+              },
+              child: Text(
+                '去虚线',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            )
           ],
         ),
       ),
