@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// constants
+import 'package:flutter_app/constants/color.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,8 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
+              style: TextStyle(
+                color: ColorConstant.primaryColor,
+              ),
             ),
             Text(
               '$_counter',
