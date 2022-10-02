@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/color.dart';
 // components
 import 'package:flutter_app/components/pageRoute/fadePageRoute/index.dart';
+import 'package:flutter_app/components/pageRoute/rippleRoute/index.dart';
 // pages
 import 'package:flutter_app/pages/demo/dashLine/index.dart';
-import 'package:flutter_app/pages/demo/routePage/index.dart';
+import 'package:flutter_app/pages/demo/pageRoute/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -106,6 +107,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: renderLinkItem('渐变自定义路由'),
               ),
+              Builder(builder: (_) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      RippleRoute(
+                        builder: (context) => const RoutePage(),
+                        routeConfig: RouteConfig.fromContext(_),
+                      ),
+                    );
+                  },
+                  child: renderLinkItem('点击自定义路由'),
+                );
+              }),
             ],
           ),
         ),
