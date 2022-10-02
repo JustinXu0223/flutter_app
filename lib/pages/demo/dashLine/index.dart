@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 // constants
 import 'package:flutter_app/constants/color.dart';
 // components
@@ -12,11 +11,7 @@ class DashLinePage extends StatefulWidget {
   DashLinePageState createState() => DashLinePageState();
 }
 
-class DashLinePageState extends State<DashLinePage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => true; // 保持应用状态
-
+class DashLinePageState extends State<DashLinePage> {
   @override
   void initState() {
     super.initState();
@@ -24,22 +19,17 @@ class DashLinePageState extends State<DashLinePage>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-    return AnnotatedRegion(
-      value: SystemUiOverlayStyle.light, // 修改状态栏字体颜色
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('虚线'),
-          automaticallyImplyLeading: false,
-        ),
-        body: SingleChildScrollView(
-          child: Container(
-            height: 62,
-            color: Colors.red.withOpacity(0.3),
-            margin: const EdgeInsets.symmetric(horizontal: 2),
-            child: DashLine(
-              color: ColorConstant.strongColor,
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('虚线'),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: 62,
+          color: Colors.red.withOpacity(0.3),
+          margin: const EdgeInsets.symmetric(horizontal: 2),
+          child: DashLine(
+            color: ColorConstant.strongColor,
           ),
         ),
       ),
